@@ -20,17 +20,27 @@ class SimpleAtomicLong
     /**
      * The ReentrantReadWriteLock used to serialize access to mValue.
      */
+<<<<<<< Updated upstream:grading-drivers/week-2-assignment-1/src/edu/vuum/mocca/SimpleAtomicLong.java
 
     // TODO -- you fill in here by replacing the null with an
     // initialization of ReentrantReadWriteLock.
     private ReentrantReadWriteLock mRWLock = null;
+=======
+    // TODO - replace the null with the appropriate initialization:
+    private ReentrantReadWriteLock mRWLock = new ReentrantReadWriteLock();
+>>>>>>> Stashed changes:assignments/week-2-assignment-1/src/SimpleAtomicLong.java
 
     /**
      * Creates a new SimpleAtomicLong with the given initial value.
      */
     public SimpleAtomicLong(long initialValue)
     {
+<<<<<<< Updated upstream:grading-drivers/week-2-assignment-1/src/edu/vuum/mocca/SimpleAtomicLong.java
         // TODO -- you fill in here
+=======
+        // TODO - you fill in here
+    	mValue = initialValue;
+>>>>>>> Stashed changes:assignments/week-2-assignment-1/src/SimpleAtomicLong.java
     }
 
     /**
@@ -41,9 +51,16 @@ class SimpleAtomicLong
     public long get()
     {
         long value;
+<<<<<<< Updated upstream:grading-drivers/week-2-assignment-1/src/edu/vuum/mocca/SimpleAtomicLong.java
 
         // TODO -- you fill in here
 
+=======
+        // TODO - you fill in here, using a readLock()
+        mRWLock.readLock().lock();
+        value = mValue;
+        mRWLock.readLock().unlock();
+>>>>>>> Stashed changes:assignments/week-2-assignment-1/src/SimpleAtomicLong.java
         return value;
     }
 
@@ -54,10 +71,18 @@ class SimpleAtomicLong
      */
     public long decrementAndGet()
     {
+<<<<<<< Updated upstream:grading-drivers/week-2-assignment-1/src/edu/vuum/mocca/SimpleAtomicLong.java
         long value = 0;
 
         // TODO -- you fill in here
 
+=======
+        long value;
+        // TODO - you fill in here, using a writeLock()
+        mRWLock.writeLock().lock();
+        value = --mValue;
+        mRWLock.writeLock().unlock();
+>>>>>>> Stashed changes:assignments/week-2-assignment-1/src/SimpleAtomicLong.java
         return value;
     }
 
@@ -68,10 +93,18 @@ class SimpleAtomicLong
      */
     public long getAndIncrement()
     {
+<<<<<<< Updated upstream:grading-drivers/week-2-assignment-1/src/edu/vuum/mocca/SimpleAtomicLong.java
         long value = 0;
 
         // TODO -- you fill in here
 
+=======
+        long value;
+        // TODO - you fill in here, using a writeLock()
+        mRWLock.writeLock().lock();
+        value = mValue++;
+        mRWLock.writeLock().unlock();        
+>>>>>>> Stashed changes:assignments/week-2-assignment-1/src/SimpleAtomicLong.java
         return value;
     }
 
@@ -82,10 +115,18 @@ class SimpleAtomicLong
      */
     public long getAndDecrement()
     {
+<<<<<<< Updated upstream:grading-drivers/week-2-assignment-1/src/edu/vuum/mocca/SimpleAtomicLong.java
         long value = 0;
 
         // TODO -- you fill in here
 
+=======
+        long value;
+        // TODO - you fill in here, using a writeLock()
+        mRWLock.writeLock().lock();
+        value = mValue--;
+        mRWLock.writeLock().unlock();        
+>>>>>>> Stashed changes:assignments/week-2-assignment-1/src/SimpleAtomicLong.java
         return value;
     }
 
@@ -96,10 +137,18 @@ class SimpleAtomicLong
      */
     public long incrementAndGet()
     {
+<<<<<<< Updated upstream:grading-drivers/week-2-assignment-1/src/edu/vuum/mocca/SimpleAtomicLong.java
         long value = 0;
 
         // TODO -- you fill in here
 
+=======
+        long value;
+        // TODO - you fill in here, using a writeLock()
+        mRWLock.writeLock().lock();
+        value = ++mValue;
+        mRWLock.writeLock().unlock();                
+>>>>>>> Stashed changes:assignments/week-2-assignment-1/src/SimpleAtomicLong.java
         return value;
     }
 }
